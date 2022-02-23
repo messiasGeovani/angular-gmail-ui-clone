@@ -1,0 +1,34 @@
+<form class="form">
+  <mat-form-field class="form--field form--field__full-width" appearance="outline">
+    <mat-icon class="form--icon" matPrefix>search</mat-icon>
+    <input type="text" class="form--input" placeholder="Search mail" matInput [formControl]="topbarFormControl"
+      [matAutocomplete]="auto" [(ngModel)]="value">
+    <button *ngIf="value" class="form--icon" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+      <mat-icon>close</mat-icon>
+    </button>
+
+    <mat-autocomplete #auto="matAutocomplete">
+      <div style="display: flex;">
+        <button mat-stroked-button aria-label="Gmail" class="form--autocomplete--button">
+          <mat-icon style="margin-right: 10px; color: #467FCF; font-size: 20px;">attachment</mat-icon>
+          <span style="color: gray">Has attachment</span>
+        </button>
+        <button mat-stroked-button aria-label="Gmail" class="form--autocomplete--button">
+          <mat-icon style="margin-right: 10px; color: #467FCF; font-size: 20px;">date_range</mat-icon>
+          <span style="color: gray">Last 7 days</span>
+        </button>
+        <button mat-stroked-button aria-label="Gmail" class="form--autocomplete--button">
+          <mat-icon class="material-icons-outlined" style="margin-right: 10px; color: #467FCF; font-size: 20px;">
+            account_circle
+          </mat-icon>
+          <span style="color: gray">From me</span>
+        </button>
+      </div>
+      <span class="form--autocomplete--spacer"></span>
+      <mat-option *ngFor="let option of options" [value]="option" style="font-size: 15px; height: 35px;">
+        <mat-icon mat-list-icon style="font-size: 17px; margin-right: 10px;">schedule</mat-icon>
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>

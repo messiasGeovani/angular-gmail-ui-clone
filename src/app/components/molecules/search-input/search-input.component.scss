@@ -1,0 +1,52 @@
+.form {
+  width: 100%;
+
+  &--field {
+    max-height: 100%;
+    margin-top: 25px;
+
+    &__full-width {
+      width: 100%;
+    }
+  }
+
+  &--input {
+    font-size: 16px;
+    position: relative;
+    bottom: 3.8px;
+    margin-left: 20px;
+  }
+
+  &--autocomplete {
+    &--button {
+      max-height: 30px;
+
+      margin: 10px 5px;
+
+      padding: 10px;
+      padding-left: 5px;
+
+      border-radius: 8px;
+
+      display: flex;
+      align-items: center;
+
+      &:first-child {
+        margin-left: 15px;
+      }
+    }
+
+    &--spacer {
+      display: block;
+      height: 1px;
+      width: 99%;
+      background-color: lightgray;
+      margin: 0 auto;
+    }
+  }
+
+  &--icon {
+    position: relative;
+    bottom: 1.5px;
+  }
+}
