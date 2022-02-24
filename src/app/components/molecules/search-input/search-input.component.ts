@@ -14,4 +14,8 @@ export class SearchInputComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  public handleDeleteOption(index: number): void {
+    this.options.splice(index, 1);
+  }
 }

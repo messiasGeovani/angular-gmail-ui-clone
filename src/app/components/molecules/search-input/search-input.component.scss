@@ -36,6 +36,40 @@
       }
     }
 
+    &--option {
+      font-size: 15px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      mat-icon {
+        font-weight: bold;
+      }
+
+      >span>mat-icon {
+        font-size: 16px;
+        margin-right: 10px;
+        color: gray;
+      }
+
+      >mat-icon {
+        opacity: 0;
+        font-size: 15px;
+        color: darkgray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &:hover {
+        &>mat-icon:last-child {
+          opacity: 1;
+        }
+      }
+
+    }
+
     &--spacer {
       display: block;
       height: 1px;
@@ -49,4 +83,6 @@
     position: relative;
     bottom: 1.5px;
   }
+
+
 }

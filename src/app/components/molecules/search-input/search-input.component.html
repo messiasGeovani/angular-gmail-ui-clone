@@ -25,9 +25,15 @@
         </button>
       </div>
       <span class="form--autocomplete--spacer"></span>
-      <mat-option *ngFor="let option of options" [value]="option" style="font-size: 15px; height: 35px;">
-        <mat-icon mat-list-icon style="font-size: 17px; margin-right: 10px;">schedule</mat-icon>
-        {{option}}
+      <mat-option *ngFor="let option of options; let index = index" [value]="option" style="height: 35px;"
+        class="form--autocomplete--option">
+        <div>
+          <span>
+            <mat-icon mat-list-icon>schedule</mat-icon>
+            {{option}}
+          </span>
+          <mat-icon (click)="handleDeleteOption(index)" matSuffix>close</mat-icon>
+        </div>
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
