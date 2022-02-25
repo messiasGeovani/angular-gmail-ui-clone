@@ -3,38 +3,36 @@
     <mat-icon class="form--icon" matPrefix>search</mat-icon>
     <input type="text" class="form--input" placeholder="Search mail" matInput [formControl]="topbarFormControl"
       [matAutocomplete]="auto" [(ngModel)]="value">
-    <button *ngIf="value" class="form--icon" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-      <mat-icon>close</mat-icon>
+    <button *ngIf="value" class="form--icon-button" matSuffix mat-icon-button aria-label="Clear" (click)=" value=''">
+      <mat-icon style=" font-size: 24px;">close</mat-icon>
     </button>
 
     <mat-autocomplete #auto="matAutocomplete">
       <div style="display: flex;">
         <button mat-stroked-button aria-label="Gmail" class="form--autocomplete--button">
-          <mat-icon style="margin-right: 10px; color: #467FCF; font-size: 20px;">attachment</mat-icon>
+          <mat-icon style="color: #467FCF; font-size: 20px;">attachment</mat-icon>
           <span style="color: gray">Has attachment</span>
         </button>
         <button mat-stroked-button aria-label="Gmail" class="form--autocomplete--button">
-          <mat-icon style="margin-right: 10px; color: #467FCF; font-size: 20px;">date_range</mat-icon>
+          <mat-icon style="color: #467FCF; font-size: 20px;">date_range</mat-icon>
           <span style="color: gray">Last 7 days</span>
         </button>
         <button mat-stroked-button aria-label="Gmail" class="form--autocomplete--button">
-          <mat-icon class="material-icons-outlined" style="margin-right: 10px; color: #467FCF; font-size: 20px;">
+          <mat-icon class="material-icons-outlined" style="color: #467FCF; font-size: 20px;">
             account_circle
           </mat-icon>
           <span style="color: gray">From me</span>
         </button>
       </div>
       <span class="form--autocomplete--spacer"></span>
-      <mat-option *ngFor="let option of options; let index = index" [value]="option" style="height: 35px;"
-        class="form--autocomplete--option">
-        <div>
-          <span>
-            <mat-icon mat-list-icon>schedule</mat-icon>
-            {{option}}
-          </span>
-          <mat-icon (click)="handleDeleteOption(index)" matSuffix>close</mat-icon>
-        </div>
-      </mat-option>
+      <div *ngFor="let option of options; let index = index">
+        <mat-option [value]="option" class="form--autocomplete--option">
+          <mat-icon mat-list-icon>schedule</mat-icon>
+          {{option}}
+          <mat-icon aria-expanded="true" class="form--autocomplete--close-icon" (click)="handleDeleteOption(index)"
+            matSuffix>close</mat-icon>
+        </mat-option>
+      </div>
     </mat-autocomplete>
   </mat-form-field>
 </form>

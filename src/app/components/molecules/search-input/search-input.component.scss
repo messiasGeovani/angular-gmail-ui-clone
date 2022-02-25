@@ -37,6 +37,9 @@
     }
 
     &--option {
+      height: 35px;
+      cursor: initial;
+
       font-size: 15px;
 
       display: flex;
@@ -44,30 +47,32 @@
       justify-content: space-between;
 
       mat-icon {
-        font-weight: bold;
-      }
-
-      >span>mat-icon {
-        font-size: 16px;
-        margin-right: 10px;
-        color: gray;
-      }
-
-      >mat-icon {
-        opacity: 0;
-        font-size: 15px;
-        color: darkgray;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      &:hover {
-        &>mat-icon:last-child {
-          opacity: 1;
+        &:first-child {
+          font-weight: bold;
+          font-size: 16px;
+          margin-top: 5px;
+          margin-right: 10px;
+          color: gray;
         }
       }
 
+      &:hover {
+        mat-icon:last-child {
+          // opacity: 1;
+          background: red;
+        }
+      }
+    }
+
+    &--close-icon {
+      // opacity: 0;
+      font-size: 15px;
+      color: darkgray;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: absolute;
     }
 
     &--spacer {
@@ -80,9 +85,17 @@
   }
 
   &--icon {
+    font-size: 24px;
     position: relative;
-    bottom: 1.5px;
+    bottom: 1.7px;
   }
 
+  &--icon-button {
+    max-height: 35px;
+    max-width: 35px;
+    position: absolute;
+    top: -32px;
+    right: 0;
+  }
 
 }
