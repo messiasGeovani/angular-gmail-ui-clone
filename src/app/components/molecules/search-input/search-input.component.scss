@@ -31,6 +31,15 @@
       display: flex;
       align-items: center;
 
+      mat-icon {
+        color: #467FCF;
+        font-size: 20px;
+      }
+
+      >span {
+        color: gray
+      }
+
       &:first-child {
         margin-left: 15px;
       }
@@ -46,6 +55,15 @@
       align-items: center;
       justify-content: space-between;
 
+      &--close-icon {
+        font-size: 15px;
+        color: darkgray;
+        cursor: pointer;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+
       mat-icon {
         &:first-child {
           font-weight: bold;
@@ -58,21 +76,9 @@
 
       &:hover {
         mat-icon:last-child {
-          // opacity: 1;
-          background: red;
+          opacity: 1;
         }
       }
-    }
-
-    &--close-icon {
-      // opacity: 0;
-      font-size: 15px;
-      color: darkgray;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      position: absolute;
     }
 
     &--spacer {
